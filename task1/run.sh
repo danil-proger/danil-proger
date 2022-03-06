@@ -11,9 +11,8 @@ esac
 shift
 shift
 done
-
-
-mkdir $BACKUP_FOLDER
-find $INPUT_FOLDER -name "*.$EXTENSION" | xargs cp —parents -t $BACKUP_FOLDER
-tar -czf $BACKUP_FOLDER/../$BACKUP_ARCHIVE_NAME $BACKUP_FOLDER 2>"/dev/null"
+mkdir $backup_folder
+find $input_folder -name "*.$extension" \( -exec cp —parents '{}' "$backup_folder" \; \)
+tar -czf $backup_folder/../$backup_archive_name $backup_folder 2> "/dev/null"
 echo "done"
+
