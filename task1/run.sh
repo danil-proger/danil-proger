@@ -1,18 +1,17 @@
 #!/bin/bash
-
-for i in 1 2 3 4
+while [ -n "$1" ]
 do
 case "$1" in
-	"--input_folder") INPUT_FOLDER="$2";;
-	"--extension") EXTENSION="$2";;
-	"--backup_folder") BACKUP_FOLDER="$2";;
-	"--backup_archive_name") BACKUP_ARCHIVE_NAME="$2";;
+	"--input_folder") in_folder="$2";;
+	"--extension") extension="$2";;
+	"--backup_folder") back_folder="$2";;
+	"--backup_archive_name") backup_archive_name="$2";;
 esac
 shift
 shift
 done
-mkdir $BACKUP_FOLDER
-find $INPUT_FOLDER -name "*.$EXTENSION" \( -exec cp —parents '{}' "$BACKUP_FOLDER" \; \)
-tar -czf $BACKUP_FOLDER/../$BACKUP_ARCHIVE_NAME $BACKUP_FOLDER 2> "/dev/null"
+mkdir "${back_Folder}"
+find "${in_Folder}" -name "*.$extension" \( -exec cp --parents '{}' "${back_Folder}" \; \)
+tar -czf $back_Folder/../$back_archive_name $back_Folder 2>"/dev/null"
 echo "done"
 
