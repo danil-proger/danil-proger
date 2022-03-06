@@ -2,9 +2,9 @@
 while [ -n "$1" ]
 do
 case "$1" in
-	"--input_folder") in_folder="$2";;
+	"--input_folder") in_Folder="$2";;
 	"--extension") extension="$2";;
-	"--backup_folder") back_folder="$2";;
+	"--backup_folder") back_Folder="$2";;
 	"--backup_archive_name") backup_archive_name="$2";;
 esac
 shift
