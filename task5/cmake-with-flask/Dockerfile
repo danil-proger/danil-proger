@@ -1,4 +1,6 @@
 from ubuntu:20.04
+
+RUN apt-get update
 RUN pip install flask
 COPY . opt/techprog
 WORKDIR opt/techprog
