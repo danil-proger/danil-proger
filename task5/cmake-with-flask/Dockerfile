@@ -2,8 +2,11 @@ from ubuntu:20.04
 
 
 RUN apt-get update
-RUN apt-get -y install g++  make cmake
+RUN apt-get -y install cmake
+RUN apt-get -y install make
+RUN apt-get -y install g++
 RUN apt-get install -y python3-pip
+USER root
 RUN pip install flask
 COPY . opt/techprog
 WORKDIR opt/techprog
